@@ -1,0 +1,31 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #61dafb;
+    display: flex;
+    justify-content: space-between;
+}
+.h1 {
+    display: inline-block;
+    padding-left: 20px;
+}
+.nav{
+    display: inline-block;
+    list-style: none;
+    padding-right: 10%;
+}
+.ul {
+    padding-top: 20px;
+    list-style: none;
+}
+.default {
+    float: left;
+    margin-left: 40px;
+}
+.left {
+    float: right;
+    margin-right: 40px;
+}
