@@ -19,7 +19,7 @@ const SurveyStatistic = () => {
          * 설문 통계 가져오기
          * 수정 완료
          */
-        const response = await axios.get(`/api/survey/result/${surveyId}`);
+        const response = await axios.get(`/api/read/survey/result/${surveyId}`);
         console.log("response: ", response.data);
         setSurveyData(response.data);
       } catch (error) {
@@ -75,7 +75,7 @@ const SurveyStatistic = () => {
        * 통계 결과 필터 적용
        * 수정 완료
        */
-      const response = await axios.get('/api/survey/filter?' + queryString, {}, {
+      const response = await axios.get('/api/read/survey/filter?' + queryString, {}, {
         headers: {
           'Content-Type': 'application/json', // 요청 본문의 타입을 지정합니다.
           Authorization: `Bearer ${token}` // JWT 토큰을 헤더에 추가합니다.

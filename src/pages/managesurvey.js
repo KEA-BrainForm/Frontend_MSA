@@ -35,7 +35,7 @@ const ManagementPage = () => {
             try {
                 console.log("ACCESS-Token: ", token);
                 // 페이지가 마운트된 후에 서버로 GET 요청 보내기
-                const response = await axios.get('/api/survey/created', { //   생성한 설문 가져오는 요청
+                const response = await axios.get('/api/read/survey/created', { //   생성한 설문 가져오는 요청
                     headers: {
                         Authorization: `Bearer ${token}` // JWT 토큰을 헤더에 추가합니다.
                     }
@@ -58,7 +58,7 @@ const ManagementPage = () => {
              * */   
             try {
                 // 페이지가 마운트된 후에 서버로 GET 요청 보내기
-                const response2 = await axios.get('/api/survey/answered', { //   생성한 설문 가져오는 요청
+                const response2 = await axios.get('/api/read/survey/answered', { //   응답한 설문 가져오는 요청
                     headers: {
                         Authorization: `Bearer ${token}` // JWT 토큰을 헤더에 추가합니다.
                     }

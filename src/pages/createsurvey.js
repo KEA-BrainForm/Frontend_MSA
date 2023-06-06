@@ -273,7 +273,7 @@ const Createsurvey = () => {
      * 설문 생성
      * 수정 완료
      */
-    let result = await Axios.post("/api/survey", {
+    let result = await Axios.post("/api/survey/new", {
       title: globalTitle,
       questionList: questionList,
       visibility: visibilityTemp,

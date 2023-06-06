@@ -17,7 +17,7 @@ const Mypage = () => {
         const token = localStorage.getItem("ACCESS_TOKEN");
         
         //내 정보 조회
-        const response = await axios.get(`/api/member`, {
+        const response = await axios.get(`/api/read/member/`, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -51,7 +51,7 @@ const Mypage = () => {
     const token = localStorage.getItem("ACCESS_TOKEN");
 
     //내 정보 수정
-    axios.patch("/api/member", registerInfo, {
+    axios.patch("/api/member/changed/", registerInfo, {
       headers: {
         'Content-Type': 'application/json', // 요청 본문의 타입을 지정합니다.
         Authorization: `Bearer ${token}` // JWT 토큰을 헤더에 추가합니다.

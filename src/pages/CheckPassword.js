@@ -38,7 +38,7 @@ function CheckPassword() {
     const fetchData = async () => {
       try {
         console.log(`${surveyId} !!!`);
-        const response = await axios.get(`/api/ques/${surveyId}`);
+        const response = await axios.get(`/api/read/survey/question/${surveyId}`);
         setSurveyData(response.data);
         console.log(response.data);
       } catch (error) {

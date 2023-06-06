@@ -89,7 +89,7 @@ function SurveyResponse() {
 
   useEffect(() => {
     // socket 연결 설정
-    const sock = new SockJS(`http://127.0.0.1:8080/ws`);  // 소켓 연결할 서버 주소
+    const sock = new SockJS(`http://127.0.0.1:8000/ws`);  // 소켓 연결할 서버 주소
     stompClient = Stomp.over(sock);
     stompClient.connect({}, onConnected, onError);
 
@@ -97,7 +97,8 @@ function SurveyResponse() {
     const fetchData = async () => {
       try {
         console.log(`${surveyId} !!!`);
-        const response = await axios.get(`/api/survey/question/${surveyId}`);
+        const response = await axios.get(`/api/read/survey/question/${surveyId}`);  // 해당 id의 설문지의 질문의 내용을 가져오는 요청
+        console.log("survey_id에 해당하는 설문지의 질문들 가져오는 컨트롤러");
         setSurveyData(response.data);
         console.log(response.data);
       } catch (error) {
@@ -169,7 +170,7 @@ function SurveyResponse() {
     const selectedAnswersJSON = JSON.stringify(selectedAnswers);
     const token = localStorage.getItem("ACCESS_TOKEN");
     try {
-      const response = await axios.post('/api/answer', {
+      const response = await axios.post('/api/answer/finished', {
         surveyId: surveyId,
         answers: selectedAnswers, // 변경된 부분: 'answer'를 'answers'로 수정하고 selectedAnswers를 그대로 보냅니다.
       }, {
